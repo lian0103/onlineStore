@@ -8,6 +8,13 @@ const vproduct = Vue.component('vproduct', {
     props: ['vitem'],
     template: `
     <div class="container" id="body_rightblock">
+        <div class="row">
+            <div class="col-12">
+            <router-link to="/foo/aa">Go to Foo</router-link>
+            <router-link to="/bar/bb">Go to Bar</router-link>
+            </div>
+            <router-view></router-view>
+        </div>
       <div class="row">
           <div class="col-12">
             <vproduct_carousel></vproduct_carousel>

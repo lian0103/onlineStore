@@ -6,7 +6,6 @@ const v_common = Vue.component('vcommon', {
       isActive: false
     }
   },
-  props: ['vitem'],
   template: `
   <div>
       <header class="bar bar-nav header">
