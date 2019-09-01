@@ -17,7 +17,7 @@ function init_snode(){
 //加入router
 $('body').before("<script src='router/router.js'></script>");
 
-// 組件數的頭 資料的頭
+// 組件數的頭 資料的頭?
 new Vue({
   el: '#webApp_common',
   data: {
