@@ -26,6 +26,10 @@ new Vue({
   methods:{
     alermsg:function(){
       alert('work');
+    },
+    getdatas:function(msg){
+      alert(msg);
+      console.log('接收的資料--------->'+msg);
     }
   },
   components: {
@@ -38,8 +42,6 @@ new Vue({
 
 //載入後先掛上要呈現的vue實例
 $(function(){
-  // new vproduct({
-  //   router
-  // }).$mount('#webApp_content_snode');
+
 })
 

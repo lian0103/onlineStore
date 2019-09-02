@@ -4,22 +4,29 @@
       <span @click="showmenu">
         <i class="fas fa-bars"></i>
       </span>
-       <span><router-link  to="/OQuery">
-            <i class="fas fa-shopping-cart"></i>
-        </router-link></span>
-        <span><router-link  to="/PData">
-            <i class="fas fa-user-circle"></i>
-        </router-link> </span>
-    
+      <!-- <span>迷霧森林</span> -->
+      <span>
+        <router-link to="/Search">
+          <i class="fas fa-search"></i>
+        </router-link>
+      </span>
+      <span>
+        <router-link to="/OQuery">
+          <i class="fas fa-shopping-cart"></i>
+        </router-link>
+      </span>
     </header>
     <div id="body_leftblock" v-bind:class="{ menu_active: isActive }">
       <div class="container">
         <div class="row">
           <div class="col-12">
-            <nav class="nav flex-column">
+            <nav class="nav flex-column nav-fix">
               <!-- <a href="#" v-for=' item in menulist' :key='item.id' @click="pageTo(item.href)" class="nav-link">{{item.txt}}</a> -->
-              <router-link v-for=" item in menulist" :key="item.id" :to="{path:'/'+item.href}">{{item.txt}}
-              </router-link>
+              <router-link
+                v-for=" item in menulist"
+                :key="item.id"
+                :to="{path:'/'+item.href}"
+              >{{item.txt}}</router-link>
             </nav>
           </div>
         </div>
@@ -68,8 +75,62 @@ module.exports = {
 </script>
 
 <style>
-.h1title {
-  color: red;
-  font-size: 30px;
+#webApp_common .header {
+  background-color: #3e3e3e;
+  padding: 5px 0;
+  height: 8vh;
+  min-height: 40px;
+  max-height: 50px;
+  line-height: 1.5;
+  position: fixed;
+  z-index: 100;
+}
+
+.header span {
+  width: 2.2em;
+  padding: 0em 0.45em;
+  vertical-align: middle;
+  background: transparent;
+  width: 2em;
+  font-size: 1.5em;
+  color: #fff;
+  text-align: center;
+}
+/* .header span{
+  font-family: DFKai-sb;
+} */
+
+.header span:nth-child(n + 2) {
+  float: right;
+}
+
+.header span > a {
+  color: #fff;
+}
+
+#body_leftblock {
+  position: fixed;
+  height: 100vh;
+  z-index: 1080;
+  background-color:#3e3e3e;
+  transform: translateX(-100%);
+  transition: 1s;
+  top: 50px;
+  left: 0;
+}
+
+.menu_active {
+  transform: translateX(0%) !important;
+}
+
+.nav-fix{
+  min-height: 30vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.nav-fix a{
+  display: block;
+  flex-basis: 5vh;
 }
 </style>

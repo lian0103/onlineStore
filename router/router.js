@@ -10,9 +10,9 @@ const app_routes = [
   { path: '/', redirect: 'PDitems' },
   { path: '/PDitems', component: httpVueLoader('/components/product/vproduct.vue'),name:'產品'},
   { path: '/OQuery', component: Foo },
-  { path: '/PData', component: Bar },
+  { path: '/Search', component: Bar },
 ]
-  
+
 const app_router = new VueRouter({
-  routes: app_routes, 
+  routes: app_routes,
 })
