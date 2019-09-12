@@ -1,5 +1,5 @@
 <template>
-    <div class="container" id="body_rightblock">
+    <div class="container wrapper" id="body_rightblock">
       <div class="row">
           <div class="col-12" style="padding: inherit;">
             <vproduct_carousel></vproduct_carousel>
@@ -28,8 +28,8 @@ module.exports = {
         }
     },
     components: {
-        'vproduct_carousel': httpVueLoader('/components/product/vproduct_carousel.vue'),
-        'vpcards': httpVueLoader('/components/product/vpcards.vue'),
+        'vproduct_carousel': httpVueLoader(urlchange('/components/product/vproduct_carousel.vue')),
+        'vpcards': httpVueLoader(urlchange('/components/product/vpcards.vue')),
     },
     methods: {
         getdatas : function(msg){
@@ -45,6 +45,6 @@ module.exports = {
         width: 100%;
         font-size: .8em;
         color: #4a4a4a;
-        padding: 0 5px;
+        padding: 10px 0px 0px 15px;
     }
 </style>

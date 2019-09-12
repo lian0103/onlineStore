@@ -1,6 +1,6 @@
 <template>
   <div>
-    <header class="bar bar-nav header">
+    <header class="navbar navbar-dark bg-dark header">
       <span @click="showmenu">
         <i class="fas fa-bars"></i>
       </span>
@@ -10,9 +10,10 @@
           <i class="fas fa-search"></i>
         </router-link>
       </span>
-      <span>
-        <router-link to="/OQuery">
+      <span id="shopping-cart">
+        <router-link to="/Scart">
           <i class="fas fa-shopping-cart"></i>
+          <div></div>
         </router-link>
       </span>
     </header>
@@ -43,7 +44,7 @@ module.exports = {
       menulist: [
         { id: 1, href: "PDitems", txt: "商品瀏覽" },
         { id: 2, href: "OQuery", txt: "訂單查詢" },
-        { id: 3, href: "PData", txt: "個人資料" }
+        { id: 3, href: "member", txt: "個人資料" }
       ],
       isActive: false
     };
@@ -65,12 +66,25 @@ module.exports = {
       if (this.clicked_menu == false) {
         $("#body_leftblock").addClass("menu_active");
         this.clicked_menu = true;
+        //讓選項被點選後 選單回去
+        $('a').click(()=>{
+           //ES6 箭頭函式語法 確保this指向這個vue實例
+           $("#body_leftblock").removeClass("menu_active");
+           this.clicked_menu = false;
+        })
       } else {
         $("#body_leftblock").removeClass("menu_active");
         this.clicked_menu = false;
       }
-    }
-  }
+    },
+  },
+  watch:{
+
+  },
+  mounted: function(){
+    //讓選單點選後回去
+
+  },
 };
 </script>
 
@@ -84,6 +98,10 @@ module.exports = {
   line-height: 1.5;
   position: fixed;
   z-index: 100;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: inherit;
 }
 
 .header span {
@@ -112,7 +130,7 @@ module.exports = {
   position: fixed;
   height: 100vh;
   z-index: 1080;
-  background-color:#3e3e3e;
+  background-color: #3e3e3e;
   transform: translateX(-100%);
   transition: 1s;
   top: 50px;
@@ -123,13 +141,13 @@ module.exports = {
   transform: translateX(0%) !important;
 }
 
-.nav-fix{
+.nav-fix {
   min-height: 30vh;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
 }
-.nav-fix a{
+.nav-fix a {
   display: block;
   flex-basis: 5vh;
 }

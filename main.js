@@ -16,6 +16,7 @@ function init_snode(){
 
 //加入router
 $('body').before("<script src='router/router.js'></script>");
+$('body').before("<script src='router/data.js'></script>");
 
 // 組件數的頭 資料的頭?
 new Vue({
@@ -34,8 +35,8 @@ new Vue({
   },
   components: {
     // 'vhello': httpVueLoader('/components/product/vhello.vue'),
-    'vcommon': httpVueLoader('/components/vcommon.vue'),
-    'vproduct': httpVueLoader('/components/product/vproduct.vue'),
+    'vcommon': httpVueLoader(urlchange('/components/vcommon.vue')),
+    'vproduct': httpVueLoader(urlchange('/components/product/vproduct.vue')),
   },
   router:app_router, //從router.js來的設定
 });

@@ -7,8 +7,33 @@ body {
   overflow-y: scroll;
   padding-top: 50px;
 }
+select {
+  /*適應safari瀏覽器內容不跑偏*/
+  line-height: 1;
+  width: 100%;
+  /*將預設的select選擇框樣式清除*/
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  /*為下拉小箭頭留出一點位置,避免被文字覆蓋*/
+  padding-right: 14px;
+  font-size: 1.4rem;
+  color: #666666;
+  font-size: 14px;
+  background-color: #fff;
+  color: #c0c0c0;
+  font-size: .8em;
 
+}
 
+.wrapper{
+  width: 100%;
+  height: calc(100vh - 70px);
+  overflow-y: scroll;
+  overflow-x: hidden;
+  padding: 0px 10px 20px 10px;
+  position: relative;
+}
 
 .carousel-inner-fix {
   height: 35vh;
@@ -22,4 +47,25 @@ body {
   margin: 2%;
   width: 45%;
   display: inline-block;
+}
+
+#shopping-cart{
+  position: relative;
+}
+
+.reddotNum div{
+  position: absolute !important;
+  z-index: 300;
+  right: -5px;
+  bottom: -5px;
+  border: 1px solid #fff;
+  width: 23px;
+  height: 23px;
+  color: #fff;
+  background-color: #f00;
+  border-radius: 50%;
+  font-size: .8em;
+  text-align: center;
+  line-height: 1;
+  font-family: 'Courier New', Courier, monospace;
 }

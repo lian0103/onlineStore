@@ -8,11 +8,13 @@ const routes = [
 ]
 const app_routes = [
   { path: '/', redirect: 'PDitems' },
-  { path: '/PDitems', component: httpVueLoader('/components/product/vproduct.vue'),name:'產品'},
-  { path: '/OQuery', component: Foo },
+  { path: '/PDitems', component: httpVueLoader(urlchange('/components/product/vproduct.vue')),name:'產品'},
+  { path: '/Scart', component: httpVueLoader(urlchange('/components/shopping/shopping.vue')),name:'購物車'},
   { path: '/Search', component: Bar },
-]
+  { path: '/member', component:httpVueLoader(urlchange('/components/member/member.vue')),name:'會員' },
+  { path: '/OQuery', component:httpVueLoader(urlchange('/components/order/order.vue')),name:'訂單' },
+];
 
 const app_router = new VueRouter({
   routes: app_routes,
-})
+});

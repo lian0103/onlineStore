@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="TestProject" default="build2war" basedir=".">
+  <property environment="env"/>
+
+  <property name="JAVA_HOME" value="${env.JAVA_HOME}"/>
+  <property name="ANT_HOME" value="${env.ANT_HOME}"/>
+  <property name="TOMCAT_HOME" value="${env.TOMCAT_HOME}"/>
+
+  <property name="project-name" value="ECI" />
+  <property name="war-file-name" value="${project-name}.war" />
+  <property name="web-directory" value="" />
+
+  <property name="tomcat.lib" value="${TOMCAT_HOME}/lib"/>
+  <property name="jdk.lib" value="${JAVA_HOME}\jre\lib"/>
+
+
+  <target name="build2war" depends="" >
+    <war warfile="${war-file-name}" needxmlfile='false'>
+      <fileset dir="${web-directory}">
+        <exclude name="*.war" />
+        <exclude name="build.xml" />
+      </fileset>
+    </war>
+
+  </target>
+
+
+</project>

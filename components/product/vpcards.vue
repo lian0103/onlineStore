@@ -84,14 +84,29 @@ module.exports = {
       }
     },
     addPd : function(){
-        var c = this.pcount + 1;
-         this.pcount = c;
-        alert(this.pid);
-        alert(this.pcount);
-        this.$emit('count-event',{'pid':this.pid,'pcount':this.pcount})
+         var currentNum = this.pid;
+         var pdatas = this.pcard_datas;
+        for(var i=0;i<shoppingCart.datas.length;i++){
+          if(currentNum == shoppingCart.datas[i]){
+            // alert("已加入購物車");
+            return;
+          }else if(i == (shoppingCart.datas.length-1)){
+            shoppingCart.datas.push(currentNum);
+            shoppingList.datas.push(pdatas[(currentNum-1)]);
+            // console.log(shoppingCart.datas);
+            if(shoppingCart.datas.length >= 2){
+              var txt = shoppingCart.datas.length -1;
+              $('#shopping-cart').addClass('reddotNum');
+              $('.reddotNum div').text(txt);
+            }
+          }
+        }
+        // this.pcount = currentNum ;
+        //this.$emit('count-event',{'pid':this.pid,'pcount':this.pcount})
     },
   }
 };
+
 </script>
 
 <style>

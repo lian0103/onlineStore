@@ -3,39 +3,42 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=0" >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <!-- css基礎重置 -->
-  <link rel="stylesheet" href="/asset/css/reset.css">
+  <script>
+    //開發機18使用
+    var atlocation_href = "";
+    if (window.location.href.indexOf('http://192.168.0.18:8080') != -1) {
+      atlocation_href = "http://192.168.0.18:8080/ECI"}
+    function urlchange(url) { var new_url = atlocation_href + url; return new_url;}
+    document.write('<link rel="stylesheet" href=' + urlchange("/asset/css/reset.css") + '>');
+  </script>
   <!-- css樣式導入(套件 bt4) -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.6.2/css/sm.min.css">
-    <link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.6.2/css/sm-extend.min.css">
-    <link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.6.2/css/??sm.min.css,sm-extend.min.css">
-
-    <!-- css style手刻 -->
-    <link rel="stylesheet" href="/asset/css/style.css">
-    <title>迷霧森林銷售平台</title>
+  <!-- css style手刻 -->
+  <script>
+    document.write('<link rel="stylesheet" href=' + urlchange("/asset/css/style.css") + '>');
+  </script>
+  <title>銷售平台</title>
 </head>
 
 <body>
 
   <div id="webApp_common">
-      <vcommon></vcommon>
-      <router-view></router-view>
+    <vcommon></vcommon>
+    <router-view></router-view>
   </div>
 
 
   <!-- 使用套件  -->
-  <!-- jQuery、axios(api連線使用)、Vuejs、vue router、
-      http-vue-loader、font-awesome js、bootstrap4(版型與組件引用) -->
+  <!-- jQuery、axios(api連線使用)、Vuejs、vue router、http-vue-loader、font-awesome js、bootstrap4(版型與組件引用) -->
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"
     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script src="https://unpkg.com/vue-router@2.0.0/dist/vue-router.js"></script>
-  <!-- <script src="https://unpkg.com/vue"></script> -->
   <script src="https://unpkg.com/http-vue-loader"></script>
   <script defer src="https://use.fontawesome.com/releases/v5.0.0/js/all.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
@@ -45,8 +48,8 @@
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
 
-    <!-- 引入main js -->
-    <script src="main.js" type="text/javascript"></script>
+  <!-- 引入main js -->
+  <script src="main.js" type="text/javascript"></script>
 </body>
 
 </html>
