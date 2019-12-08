@@ -22,7 +22,6 @@
         <div class="row">
           <div class="col-12">
             <nav class="nav flex-column nav-fix">
-              <!-- <a href="#" v-for=' item in menulist' :key='item.id' @click="pageTo(item.href)" class="nav-link">{{item.txt}}</a> -->
               <router-link
                 v-for=" item in menulist"
                 :key="item.id"

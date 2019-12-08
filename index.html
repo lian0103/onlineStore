@@ -6,26 +6,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <!-- css基礎重置 -->
-  <script>
-    //開發機18使用
-    var atlocation_href = "";
-    if (window.location.href.indexOf('http://192.168.0.18:8080') != -1) {
-      atlocation_href = "http://192.168.0.18:8080/ECI"}
-    function urlchange(url) { var new_url = atlocation_href + url; return new_url;}
-    document.write('<link rel="stylesheet" href=' + urlchange("/asset/css/reset.css") + '>');
-  </script>
   <!-- css樣式導入(套件 bt4) -->
+  <!-- css style手刻 -->
+  <link rel="stylesheet" href="asset/css/reset.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <!-- css style手刻 -->
-  <script>
-    document.write('<link rel="stylesheet" href=' + urlchange("/asset/css/style.css") + '>');
-  </script>
+  <link rel="stylesheet" href="asset/css/style.css">
   <title>銷售平台</title>
 </head>
-
 <body>
-
   <div id="webApp_common">
     <vcommon></vcommon>
     <router-view></router-view>

@@ -28,8 +28,8 @@ module.exports = {
         }
     },
     components: {
-        'vproduct_carousel': httpVueLoader(urlchange('/components/product/vproduct_carousel.vue')),
-        'vpcards': httpVueLoader(urlchange('/components/product/vpcards.vue')),
+        'vproduct_carousel': httpVueLoader('./vproduct_carousel.vue'),
+        'vpcards': httpVueLoader('./vpcards.vue'),
     },
     methods: {
         getdatas : function(msg){
